@@ -1,18 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function VideoGridItem() {
+export default function VideoGridItem({ video = {} }) {
+    const { id, thumbnail, title, avatar, author, views, date } = video;
     return (
         <div
             className="col-span-12 sm:col-span-6 md:col-span-3 duration-300 hover:scale-[1.03]"
         >
             <div className="w-full flex flex-col">
                 <div className="relative">
-                    <Link to="/video/1">
+                    <Link to={`/video/${id}`}>
                         <img
-                            src="https://i3.ytimg.com/vi/6O4s7v28nlw/maxresdefault.jpg"
+                            src={thumbnail}
                             className="w-full h-auto"
-                            alt="Some video title"
+                            alt={title}
                         />
                     </Link>
 
@@ -26,9 +27,9 @@ export default function VideoGridItem() {
                 <div className="flex flex-row mt-2 gap-2">
                     <a href="#" className="shrink-0">
                         <img
-                            src="https://avatars.githubusercontent.com/u/73503432?v=4"
+                            src={avatar}
                             className="rounded-full h-6 w-6"
-                            alt="Learn with Sumit"
+                            alt={author}
                         />
                     </a>
 
@@ -37,17 +38,17 @@ export default function VideoGridItem() {
                             <p
                                 className="text-slate-900 text-sm font-semibold"
                             >
-                                Video title
+                                {title}
                             </p>
                         </a>
                         <a
                             className="text-gray-400 text-xs mt-2 hover:text-gray-600"
                             href="#"
                         >
-                            Learn with Sumit
+                            {author}
                         </a>
                         <p className="text-gray-400 text-xs mt-1">
-                            200 views . May 3, 2022
+                            {views} views . {date}
                         </p>
                     </div>
                 </div>
