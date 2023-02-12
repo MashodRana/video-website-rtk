@@ -8,31 +8,19 @@ import Tag from './Tag'
 
 export default function Tags() {
     const dispatch = useDispatch();
-    const { tags, isLoading, isError, error } = useSelector(state => state.tags);
+    const { tags } = useSelector(state => state.tags);
 
     useEffect(() => {
         dispatch(fetchTags());
     }, [dispatch])
 
-    // what will be render
-    let content;
-
-    if (isLoading)
-        content = <Loading />;
-    if (!isLoading && isError)
-        content = error;
-    if (!isLoading && !isError && tags?.length === 0)
-        content = <p>No tags found.</p>;
-    if (!isLoading && !isError && tags?.length > 0) {
-        content = tags.map(tag => <Tag key={tag.id} tag={tag} />)
-    }
-    return (
+    return tags?.length > 0 ? (
         <section>
             <div
                 className="max-w-7xl mx-auto px-5 py-6 lg:px-0 flex gap-2 border-b overflow-y-auto"
             >
-                {content}
+                {tags.map(tag => <Tag key={tag.id} tag={tag} />)}
             </div>
         </section>
-    )
+    ) : null;
 }
