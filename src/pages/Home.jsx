@@ -8,11 +8,9 @@ import Pagination from '../components/ui/Pagination'
 export default function Home() {
     return (
         <>
-            <Navbar />
             <Tags></Tags>
             <VideoGrid />
             <Pagination />
-            <Footer />
         </>
     )
 }
