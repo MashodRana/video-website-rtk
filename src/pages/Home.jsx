@@ -8,7 +8,7 @@ import Pagination from '../components/ui/Pagination'
 export default function Home() {
     return (
         <>
-            <Tags></Tags>
+            <Tags/>
             <VideoGrid />
             <Pagination />
         </>
