@@ -1,6 +1,7 @@
 import React from 'react'
 
-export default function RelatedVideoItem() {
+export default function RelatedVideoItem({video={}}) {
+    const {title, author, thumbnail, views, date, duration} = video;
     return (
         <div className="w-full flex flex-row gap-2 mb-4">
             <div
@@ -8,15 +9,15 @@ export default function RelatedVideoItem() {
             >
                 <a href="video.html">
                     <img
-                        src="https://i3.ytimg.com/vi/6O4s7v28nlw/maxresdefault.jpg"
+                        src={thumbnail}
                         className="object-cover"
-                        alt="Some video title"
+                        alt={title}
                     />
                 </a>
                 <p
                     className="absolute right-2 bottom-2 bg-gray-900 text-gray-100 text-xs px-1 py"
                 >
-                    12:10
+                    {duration}
                 </p>
             </div>
 
@@ -25,17 +26,17 @@ export default function RelatedVideoItem() {
                     <p
                         className="text-slate-900 text-sm font-semibold"
                     >
-                        Some video title
+                        {title}
                     </p>
                 </a>
                 <a
                     className="text-gray-400 text-xs mt-2 hover:text-gray-600"
                     href="#"
                 >
-                    Learn with Sumit
+                    {author}
                 </a>
                 <p className="text-gray-400 text-xs mt-1">
-                    100K views . 23 Oct 2022
+                    {views} views . {date}
                 </p>
             </div>
         </div>
