@@ -38,7 +38,7 @@ export default function Video() {
             </div>
 
             {/* <!-- related videos --> */}
-            <RelatedVideoList currentVideoId={id} tags={tags} />
+            <RelatedVideoList currentVideoId={videoId} tags={tags} />
 
         </div>
     }

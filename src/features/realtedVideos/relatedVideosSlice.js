@@ -10,8 +10,8 @@ const initialState = {
 }
 
 // Create async thunk for the realted videos
-export const fetchRelatedVideos = createAsyncThunk('realtedVideos/fetchRelatedVideos', async({videoId,tags} )=>{
-    const relatedVideos = await getRelatedVideosFromServer({videoId, tags});
+export const fetchRelatedVideos = createAsyncThunk('realtedVideos/fetchRelatedVideos', async({currentVideoId,tags} )=>{
+    const relatedVideos = await getRelatedVideosFromServer({currentVideoId, tags});
     return relatedVideos;
 })
 

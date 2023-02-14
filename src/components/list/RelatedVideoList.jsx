@@ -8,6 +8,7 @@ export default function RelatedVideoList({currentVideoId, tags}) {
     const dispatch = useDispatch();
     const {isLoading, isError, error, relatedVideos} = useSelector(state=>state.relatedVideos);
     useEffect(()=>{
+        console.log('in the useeffect: ', currentVideoId)
         dispatch(fetchRelatedVideos({currentVideoId, tags}))
     },[dispatch])
 
