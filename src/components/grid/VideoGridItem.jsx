@@ -25,22 +25,22 @@ export default function VideoGridItem({ video = {} }) {
                 </div>
 
                 <div className="flex flex-row mt-2 gap-2">
-                    <a href="#" className="shrink-0">
+                <Link to={`/video/${id}`} className="shrink-0">
                         <img
                             src={avatar}
                             className="rounded-full h-6 w-6"
                             alt={author}
                         />
-                    </a>
+                    </Link>
 
                     <div clas="flex flex-col">
-                        <a href="video.html">
+                    <Link to={`/video/${id}`} >
                             <p
                                 className="text-slate-900 text-sm font-semibold"
                             >
                                 {title}
                             </p>
-                        </a>
+                        </Link>
                         <a
                             className="text-gray-400 text-xs mt-2 hover:text-gray-600"
                             href="#"

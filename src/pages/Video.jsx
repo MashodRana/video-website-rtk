@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
 
 import VideoDescription from '../components/description/VideoDescription'
 import VideoPlayer from '../components/description/VideoPlayer'
